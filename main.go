@@ -14,7 +14,7 @@ var ApiKey string
 var UserId string
 var SessionId string
 
-func Track(event string, data map[string]interface{}) {
+func Track(event string, data map[string]interface{}) (error) {
 
 	var siftErr SiftError{}
 
@@ -40,8 +40,8 @@ func Track(event string, data map[string]interface{}) {
 	resp, err := napping.Post(siftEndpoint, &payload, &result, &siftErr)
 
 	if resp.Status() == 200 && err == nil {
-		fmt.Printf("%v\n", result)
-	} else {
-		fmt.Printf("%v\n", siftErr)
+		return nil
 	}
+
+	return siftErr
 }

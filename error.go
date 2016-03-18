@@ -11,6 +11,6 @@ type SiftError struct {
 	Request      string
 }
 
-func (e *SiftError) Error() string {
+func (e SiftError) Error() string {
 	return fmt.Sprintf("%d - %s", e.Status, e.ErrorMessage)
 }
