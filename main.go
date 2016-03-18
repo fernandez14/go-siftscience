@@ -14,9 +14,9 @@ var ApiKey string
 var UserId string
 var SessionId string
 
-func Track(event string, data map[string]interface{}) (error) {
+func Track(event string, data map[string]interface{}) error {
 
-	var siftErr SiftError{}
+	var siftErr SiftError
 
 	payload := map[string]interface{}{}
 	result := map[string]interface{}{}
