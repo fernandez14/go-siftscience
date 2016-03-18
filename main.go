@@ -2,8 +2,6 @@ package gosift
 
 import (
 	"gopkg.in/jmcvetta/napping.v3"
-
-	"fmt"
 )
 
 const (
