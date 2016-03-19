@@ -18,7 +18,9 @@ func Track(event string, data map[string]interface{}) error {
 
 	payload := map[string]interface{}{}
 	result := map[string]interface{}{}
-
+	
+	payload["$type"] = event
+	
 	if ApiKey != "" {
 		payload["$api_key"] = ApiKey
 	}
